@@ -13,7 +13,7 @@ void search() {
   while (1) {    
                                  
     if (endGame) {    //default condition, If you fail disarm, variable endgame set to false
-      failSplash();
+      failEvent();
     }
 
     //this part for blink the led (hope work)
@@ -33,7 +33,7 @@ void search() {
     //###########################CHECKINGS##################
 
     //Check If Game End
-    if (minute - aTime / 60000 == 0 && 59 - ((aTime / 1000) % 60) == 0)failSplash();
+    if (minute - aTime / 60000 == 0 && 59 - ((aTime / 1000) % 60) == 0)failEvent();
     //Serial.println(keypad.getKey());
     //if the game has password mode enabled, this code provide management
     if ('d' == keypad.getKey() && passwordEnable) {
@@ -120,7 +120,7 @@ void destroy() {
 
     //If you fail disarm.
     if (endGame) {
-      explodeSplash();
+      explodeEvent();
     }
 
     //Led Blink
@@ -153,7 +153,7 @@ void destroy() {
     ////TIME PASED AWAY AND THE BOMB EXPLODES
     if (minute - aTime / 60000 == 0 && 59 - ((aTime / 1000) % 60) == 0) // Check if game ends
     {
-      explodeSplash();
+      explodeEvent();
     }
     //print time
 
@@ -179,7 +179,7 @@ void destroy() {
       //then compare
 
       if (comparePassword()) {
-        disarmedSplash();
+        disarmedEvent();
       }
       lcd.clear();
       lcd.setCursor(3, 0);
@@ -222,7 +222,7 @@ void destroy() {
         drawBar(percent);
 
         //BOMB DISARMED GAME OVER
-        if (percent >= 100)disarmedSplash();
+        if (percent >= 100)disarmedEvent();
       }
       digitalWrite(REDLED, LOW);
       digitalWrite(GREENLED, LOW);

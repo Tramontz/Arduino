@@ -1,5 +1,5 @@
-  char* menu1[]={"Search&Destroy","Sabotage","Domination", "Configuration"};
-  char* menu2[]={"Game Config","Sound Config", "Relay Test", "Auto Test"};   
+  char* menu1[]={"Search&Destroy","Sabotage","Domination", "Configuration"      };      
+  char* menu2[]={"Game Config","Sound Config", "Relay Test", "Auto Test"      };
   char* GAME_TIME="Game Time:";
   char* BOMB_TIME="Bomb Time:";
   char* ZERO_MINUTES="00 minutes";

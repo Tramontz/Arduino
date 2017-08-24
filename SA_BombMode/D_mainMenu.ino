@@ -6,7 +6,7 @@ void mainMenu(){
   lcd.print("Wellcome to Tramontz Softair mode 2.0, please select game mode (press any key for continue)");
   // check for incoming serial data:
 
-  var = keypad.waitForKey()  
+  var = keypad.waitForKey();
   digitalWrite(GREENLED, LOW); 
   digitalWrite(REDLED, LOW); 
 
@@ -57,13 +57,13 @@ void mainMenu(){
         saStatus=true;
         configQuickGame();
         startGameCount();
-        sabotage();
+        //sabotage();   activate this when sabotage mode exist
         break;
       case 2:
         doStatus=true;
         configQuickGame();
         startGameCount();
-        domination();
+        //domination();   activate this when domination mode exist
         break;
       case 3:
         config();
@@ -106,7 +106,7 @@ void config(){
     }
     if(var == BT_CANCEL){
       tone(tonepin,2400,30);
-      menuPrincipal();
+      mainMenu();
     }
     if(var == BT_SEL){
       tone(tonepin,2400,30);
